@@ -1,23 +1,19 @@
+# html 태그를 찾기 위해 Beautifulsoup 이용
 from requests import get
+from bs4 import BeautifulSoup   
 
-websites = (
-    "google.com",
-    "aribnb.com",
-    "https://twitther.com",
-    "facebook.com",
-    "https://tiktok.com"
-)
+base_url = "https://weworkremotely.com/remote-jobs/search?term="
+search_term = "python"
 
-results = {
-}
-
-for website in websites:
-    if not website.startswith("https://"):
-        website = f"https://{website}"
-    response = get(website)
-    if response.status_code == 200 :
-        results[website] = "OK"
-    else :
-        results[website] = "FAILED"
-
-print(results)
+response = get(f"{base_url}{search_term}")
+if response.status_code != 200:
+    print("Can't request website")
+else:
+    soup = BeautifulSoup(response.text, "html.parser")
+    jobs = soup.find_all('section', class_="jobs")  
+    for job_section in jobs:
+        job_posts = job_section.find_all('li')
+        job_posts.pop(-1)
+        for post in job_posts:
+            print(post)
+            print("====================================")
