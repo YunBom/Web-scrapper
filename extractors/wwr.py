@@ -18,13 +18,13 @@ def extract_wwr_jobs(keyword):
             for post in job_posts:
                 anchors = post.find_all('a')
                 anchor = anchors[1]
-                company, kind, region = anchor.find_all('span', class_="company")
+                company, kind, location = anchor.find_all('span', class_="company")
                 title = anchor.find('span', class_="title")
                 job_data = {
                     "title" : title.string,
                     "company" : company.string,
                     "kind" : kind.sring,
-                    "region" : region.string,
+                    "location" : location.string,
                 }
                 results.append(job_data)
                 print(results)
