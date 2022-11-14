@@ -7,13 +7,23 @@ from extractors.wwr import extract_wwr_jobs
 
 from selenium import webdriver
 
-keyword = "python"
+
 
 driver = webdriver.Chrome()
-base_url = f'https://kr.indeed.com/jobs?q={keyword}&l=&from=searchOnHP&vjk=89395b6ac5014113'
-driver.get(base_url)
 
-def indeed_scrap():
+def get_page_count(keyword):
+    base_url = f'https://kr.indeed.com/jobs?q={keyword}&l=&from=searchOnHP&vjk=89395b6ac5014113'
+    driver.get(base_url)
+    soup = BeautifulSoup(driver.page_source, "html.parser")
+    pagination = soup.find("nav", attrs={"aria-label" : "pagination"})
+    for page in pagination:
+        print(page)
+        print(".")
+        print(".")
+
+def indeed_scrap(keyword):
+    base_url = f'https://kr.indeed.com/jobs?q={keyword}&l=&from=searchOnHP&vjk=89395b6ac5014113'
+    driver.get(base_url)
     results = []
     soup = BeautifulSoup(driver.page_source, "html.parser")
     job_list = soup.find('ul', class_="jobsearch-ResultsList")
@@ -36,7 +46,7 @@ def indeed_scrap():
     for result in results:
         print(result, ".........")
 
-""" while (True):
-    pass """
-
-indeed_scrap()
+get_page_count("python")
+# indeed_scrap("python")
+# while (True):
+#     pass
