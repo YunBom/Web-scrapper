@@ -1,4 +1,5 @@
 #사이트 주소 : https://kr.indeed.com/?from=gnav-viewjob
+# https://kr.indeed.com/jobs?q=python&l=&vjk=e9dde247a0106af2
 # html 태그를 찾기 위해 Beautifulsoup 이용
 
 from requests import get
@@ -16,7 +17,8 @@ def get_page_count(keyword):
     driver.get(base_url)
     soup = BeautifulSoup(driver.page_source, "html.parser")
     pagination = soup.find("nav", attrs={"aria-label" : "pagination"})
-    for page in pagination:
+    print(pagination)
+    for page in pagination :
         print(page)
         print(".")
         print(".")
