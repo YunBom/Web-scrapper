@@ -11,6 +11,7 @@ def extract_jobkorea_jobs(keyword):
         print(f'Error code : {response.status_code}')
     else:
         soup: BeautifulSoup(response.text, 'html.parser')
+        
 
 
 extract_jobkorea_jobs("python")
