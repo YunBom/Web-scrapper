@@ -7,7 +7,11 @@
 **사이트**  
 indeed : https://kr.indeed.com/?from=gnav-viewjob  
 WeWorkRemotely(wwr) : https://weworkremotely.com/remote-jobs  
-<br/>
+
+**추가 사이트**(사이드 작업)  
+jobkorea : https://www.jobkorea.co.kr/
+  
+
 **사용 모듈**  
 BeautifulSoup4  
 Request  
