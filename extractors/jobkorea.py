@@ -22,9 +22,17 @@ def extract_jobkorea_jobs(keyword):
     # company 추출 / <div class="post-list-corp"> -> <a>에서 string만
                 company = a[0].string
             for info in job_info:
-                a = info.find_all('a')
     # title 결과 추출 / <div class="post-list-info"> -> <a>에서 string만
+                a = info.find_all('a')
                 title = a[0].string
+    # location 추출
+                options = info.find_all('p', class_="option")
+                for option in options :
+                    span = option.find_all('span', class_="loc long")
+        # location 정보가 들어있는 <span class="loc long"> 추출시 정체모를 빈 []가 자꾸만 추출되는 현상 해결 
+                    if span != []:
+                        location = span[0].string
+                        print(location)
 
 extract_jobkorea_jobs("python")
 
