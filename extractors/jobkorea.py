@@ -16,14 +16,14 @@ def extract_jobkorea_jobs(keyword):
         jobs = soup.find_all('li', class_="list-post")
         for job_post in jobs:
             job_info = job_post.find_all('div', class_="post-list-info")
-            # 회사이름 추출 (어떻게??)
             job_corp = job_post.find_all('div', class_="post-list-corp")
-            print(job_corp)
-            print(".")
-            print(".")
+            for a in job_corp:
+                a = a.find_all('a')
+    # company 추출 / <div class="post-list-corp"> -> <a>에서 string만
+                company = a[0].string
             for info in job_info:
                 a = info.find_all('a')
-                # title 결과 추출
+    # title 결과 추출 / <div class="post-list-info"> -> <a>에서 string만
                 title = a[0].string
 
 extract_jobkorea_jobs("python")
