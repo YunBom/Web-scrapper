@@ -51,7 +51,7 @@ def extract_indeed_jobs(keyword):
     # print(results)
     return results
 
-# jobs = extract_indeed_jobs("python")
+jobs = extract_indeed_jobs("python")
 
 # print(jobs)
 # print(len(jobs))
