@@ -1,4 +1,7 @@
 # pip install flask
+
+from extractors.indeed import extract_indeed_jobs
+from extractors.wwr import extract_wwr_jobs
 from flask import Flask, render_template
 
 app = Flask("JobScrapper")
