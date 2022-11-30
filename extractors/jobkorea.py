@@ -22,6 +22,7 @@ def extract_jobkorea_jobs(keyword):
                 a = a.find_all('a')
     # company 추출 / <div class="post-list-corp"> -> <a>에서 string만
                 company = a[0].string
+                print(a[0])
             for info in job_info:
     # title 추출 / <div class="post-list-info"> -> <a>에서 string만
                 a = info.find_all('a')
