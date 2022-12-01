@@ -15,4 +15,5 @@ jobkorea : https://www.jobkorea.co.kr/
 **사용 모듈**  
 BeautifulSoup4  
 Request  
+Flask
 
