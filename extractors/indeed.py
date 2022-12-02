@@ -53,8 +53,5 @@ def extract_indeed_jobs(keyword):
 
 # jobs = extract_indeed_jobs("python")
 
-# print(jobs)
-# print(len(jobs))
-
 # while (True):
 #     pass

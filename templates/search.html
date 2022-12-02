@@ -11,6 +11,13 @@
 
 <body>
     <h1>Search Results for "{{keyword}}"</h1>
+    {% for job in jobs %}
+        <div>
+            <span>{{job.title}}</span>
+            <span>{{job.company}}</span>
+            <span>{{job.link}}</span>
+        </div>
+    {% endfor %}
     <form action="/search">
         <input type="text" name="keyword" placeholder="write your keyword">
     </form>

@@ -30,7 +30,7 @@ def extract_wwr_jobs(keyword):
                     "link" : f'{head_url}{link}'
                 }
                 results.append(job_data)
-        # print(results)
+        print(results)
 
         # 리스트 형식으로 결과 리턴
         return results
