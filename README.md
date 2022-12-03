@@ -12,8 +12,9 @@ WeWorkRemotely(wwr) : https://weworkremotely.com/remote-jobs
 jobkorea : https://www.jobkorea.co.kr/
   
 
-**사용 모듈**  
+**사용 패키지**  
 BeautifulSoup4  
 Request  
-Flask
+Flask  
+pico
 
