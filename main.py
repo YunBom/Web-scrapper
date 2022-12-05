@@ -1,4 +1,5 @@
 # pip install flask
+# HTML 화면 구현
 
 from extractors.indeed import extract_indeed_jobs
 from extractors.wwr import extract_wwr_jobs
@@ -14,8 +15,8 @@ def home():
 def search():
     print(request.args)
     keyword = request.args.get("keyword")
-    indeed = extract_indeed_jobs("keyword")
-    wwr = extract_wwr_jobs("keyword")
+    indeed = extract_indeed_jobs(keyword)
+    wwr = extract_wwr_jobs(keyword)
     jobs = wwr + indeed
     return render_template("search.html", keyword = keyword, jobs=jobs)
 
