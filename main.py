@@ -3,6 +3,7 @@
 
 from extractors.indeed import extract_indeed_jobs
 from extractors.wwr import extract_wwr_jobs
+from extractors.remoteok import extract_remote_jobs
 from flask import Flask, render_template, request
 
 app = Flask("JobScrapper")
@@ -17,7 +18,8 @@ def search():
     keyword = request.args.get("keyword")
     indeed = extract_indeed_jobs(keyword)
     wwr = extract_wwr_jobs(keyword)
-    jobs = wwr + indeed
+    remoteok = extract_remote_jobs(keyword)
+    jobs = wwr + indeed + remoteok
     return render_template("search.html", keyword = keyword, jobs=jobs)
 
 app.run("0.0.0.0")

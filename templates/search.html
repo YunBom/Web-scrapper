@@ -12,13 +12,18 @@
 
 <body>
     <main class="container">
-        <h1>Search Results for "{{keyword}}"</h1>
+        <h1>Search Results : {{keyword}}</h1>
+
+        <form action="/search">
+            <input type="text" name="keyword" placeholder="write your keyword">
+        </form>
 
         <table role="grid">
             <thead>
                 <tr>
                     <th>공고 제목</th>
                     <th>회사명</th>
+                    <th>지역</th>
                     <th>링크</th>
                 </tr>
             </thead>
@@ -26,17 +31,16 @@
             <tbody>
                 {% for job in jobs %}
                 <tr>
+                    <td>{{job.site}}</td>
                     <td>{{job.title}}</td>
                     <td>{{job.company}}</td>
-                    <td><a href="{{job.link}}">바로가기</a></td>
+                    <td>{{job.location}}</td>
+                    <td><a href="{{job.link}}">link</a></td>
                 </tr>
-                % endfor %}
+                {% endfor %}
             </tbody>
         </table>
 
-        <form action="/search">
-            <input type="text" name="keyword" placeholder="write your keyword">
-        </form>
     </main>
 </body>
 </html>

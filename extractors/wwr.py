@@ -23,6 +23,7 @@ def extract_wwr_jobs(keyword):
                 company, kind, location = anchor.find_all('span', class_="company")
                 title = anchor.find('span', class_="title")
                 job_data = {
+                    "site" : "wwr",
                     "title" : title.string.replace(",", " "),
                     "company" : company.string.replace(",", " "),
                     "kind" : kind.string.replace(",", " "),
@@ -35,4 +36,4 @@ def extract_wwr_jobs(keyword):
         # 리스트 형식으로 결과 리턴
         return results
 
-extract_wwr_jobs("python")
+# extract_wwr_jobs("python")
