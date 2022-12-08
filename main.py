@@ -27,6 +27,7 @@ def search():
         remoteok = extract_remote_jobs(keyword)
         jobs = wwr + indeed + remoteok
         db[keyword] = jobs
+        print(db)
         print(db.keys())
     return render_template("search.html", keyword=keyword, jobs=jobs)
 
