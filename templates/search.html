@@ -12,15 +12,19 @@
 
 <body>
     <main class="container">
-        <h1>Search Results : {{keyword}}</h1>
+        <hgroup>
+            <h1>Search Results : {{keyword}}</h1>
+            <a target="_blank" href="/export?keyword={{keyword}}">Download</a>
+        </hgroup>
 
-        <form action="/search">
-            <input type="text" name="keyword" placeholder="write your keyword">
-        </form>
-
-        <table role="grid">
+        <figure>
+            <form action="/search">
+                <input type="text" name="keyword" placeholder="write your keyword">
+            </form>
+            <table role="grid">
             <thead>
                 <tr>
+                    <th>사이트</th>
                     <th>공고 제목</th>
                     <th>회사명</th>
                     <th>지역</th>
@@ -39,7 +43,8 @@
                 </tr>
                 {% endfor %}
             </tbody>
-        </table>
+            </table> 
+        </figure>
 
     </main>
 </body>

@@ -36,4 +36,4 @@ def extract_wwr_jobs(keyword):
         # 리스트 형식으로 결과 리턴
         return results
 
-# extract_wwr_jobs("python")
+# extract_wwr_jobs("react")
