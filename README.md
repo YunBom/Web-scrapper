@@ -1,6 +1,6 @@
 # Web-scrapper  
 
-**repit**  
+**replit**  
 https://replit.com/@BomYi/Web-scrapper#main.py  
 
 파이썬을 이용한 취업정보 스크랩  
