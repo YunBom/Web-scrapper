@@ -20,15 +20,12 @@ def search():
         return redirect("/")
     if keyword in db:
         jobs = db[keyword]
-        print(db.keys())
     else:
         indeed = extract_indeed_jobs(keyword)
         wwr = extract_wwr_jobs(keyword)
         remoteok = extract_remote_jobs(keyword)
         jobs = wwr + indeed + remoteok
         db[keyword] = jobs
-        print(db)
-        print(db.keys())
     return render_template("search.html", keyword=keyword, jobs=jobs)
 
 @app.route("/export")
